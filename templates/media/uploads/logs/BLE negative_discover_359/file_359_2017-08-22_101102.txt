@@ -1,0 +1,9 @@
+('Script Start at :', 'Tue Aug 22 10:11:02 2017')
+
+
+('Going to Test ', ['discover'])
+passed wrong command line arguments
+Traceback (most recent call last):
+  File "run.py", line 223, in <module>
+    if (len(lis) == index+2):
+Exception: Error: you have passed wrong command line arguments['discover']

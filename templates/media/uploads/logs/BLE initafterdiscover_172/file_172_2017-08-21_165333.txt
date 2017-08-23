@@ -1,0 +1,27 @@
+Discovering Resources:
+result: 0 
+Thread created for client observe
+Waiting
+****************************************************
+Resource name: /a/vinay
+Resource handle: 0x7fd00c0008f0 
+****************************************************
+
+client is intialized with mode type as client
+Script Start at : Mon Aug 21 16:53:33 2017
+
+
+Going to Test  ['discover', '1', 'init', '1']
+Delete All Tables before Discovering Devices  0
+in sleep in python after discovery
+****************************************
+Resource_Name : /a/vinay
+Resource_Handle : 0x7fd00c0008f0
+****************************************
+
+..................initilizing .................
+
+
+Disconnecting from mysql database****
+
+Script End at : Mon Aug 21 16:53:46 2017

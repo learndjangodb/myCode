@@ -1,0 +1,11 @@
+Discovering Resources:
+result: 0 
+Thread created for client observe
+Waiting
+Script Start at : Thu Aug 17 11:28:39 2017
+
+
+Going to Test  ['discover', '1']
+Delete All Tables before Discovering Devices  0
+in sleep in python after discovery
+/bin/sh: line 1: 16055 Segmentation fault      (core dumped) python run.py observe 1 init 1 > test.log

@@ -1,0 +1,36 @@
+Script Start at : Tue Aug 22 10:54:24 2017
+
+
+Going to Test  ['discover', '1', 'init', '1']
+Delete All Tables before Discovering Devices  0
+Discovering Resources:
+result: 0 
+Thread created for client observe
+Waiting
+****************************************************
+Resource name: /a/vinay
+Resource handle: 0x7fea600008f0 
+****************************************************
+
+****************************************************
+Resource name: /a/RAHUL_IP
+Resource handle: 0x7fea60009670 
+****************************************************
+
+in sleep in python after discovery
+****************************************
+Resource_Name : /a/vinay
+Resource_Handle : 0x7fea600008f0
+****************************************
+****************************************
+Resource_Name : /a/RAHUL_IP
+Resource_Handle : 0x7fea60009670
+****************************************
+
+..................initilizing .................
+
+client is intialized with mode type as client
+
+Disconnecting from mysql database****
+
+Script End at : Tue Aug 22 10:54:36 2017

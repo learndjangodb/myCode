@@ -1,0 +1,23 @@
+Discovering Resources:
+result: 0 
+Thread created for client observe
+Waiting
+Script Start at : Mon Aug 21 16:54:39 2017
+
+
+Going to Test  ['discover', '1']
+Delete All Tables before Discovering Devices  0
+in sleep in python after discovery
+****************************************
+Resource_Name : /a/vinay
+Resource_Handle : 0x7f38ac0008f0
+****************************************
+
+Disconnecting from mysql database****
+
+Script End at : Mon Aug 21 16:54:51 2017
+****************************************************
+Resource name: /a/vinay
+Resource handle: 0x7f38ac0008f0 
+****************************************************
+

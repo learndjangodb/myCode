@@ -1,0 +1,24 @@
+('Script Start at :', 'Tue Aug 22 10:11:36 2017')
+
+
+('Going to Test ', ['discover', '1'])
+('Delete All Tables before Discovering Devices ', 0)
+Discovering Resources:
+result: 0 
+Thread created for client observe
+Waiting
+****************************************************
+Resource name: /a/RAHUL_IP
+Resource handle: 0x7feee40008f0 
+****************************************************
+
+in sleep in python after discovery
+****************************************
+('Resource_Name :', '/a/RAHUL_IP')
+('Resource_Handle :', '0x7feee40008f0')
+****************************************
+['0x7feee40008f0']
+
+Disconnecting from mysql database****
+
+('Script End at :', 'Tue Aug 22 10:11:49 2017')

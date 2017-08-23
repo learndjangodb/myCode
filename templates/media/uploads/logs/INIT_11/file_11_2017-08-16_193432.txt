@@ -1,0 +1,15 @@
+client is intialized with mode type as client
+Script Start at : Wed Aug 16 19:34:32 2017
+
+
+Going to Test  ['init', '1']
+
+connecting to mysql database
+
+
+..................initilizing .................
+
+
+Disconnecting from mysql database****
+
+Script End at : Wed Aug 16 19:34:32 2017

@@ -1,0 +1,9 @@
+Script Start at : Tue Aug 22 13:19:38 2017
+
+
+Going to Test  ['init', '1', 'discover', '1', 'get']
+passed wrong command line arguments
+Traceback (most recent call last):
+  File "run.py", line 229, in <module>
+    
+Exception: Error: you have passed wrong command line arguments['init', '1', 'discover', '1', 'get']
