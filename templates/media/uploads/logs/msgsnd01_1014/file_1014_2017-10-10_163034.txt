@@ -1,0 +1,9 @@
+Test Start Time: Tue Oct 10 16:27:00 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+Test Start Time: Tue Oct 10 16:30:34 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+pan(28498): Must supply a file collection or a command

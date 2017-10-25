@@ -1,0 +1,5 @@
+ 2:20PM on Oct 10, 2017
+
+Status Code = 200
+
+Content = {"statuscode":"200","recordsData":[{"fileName":"Jellyfish.jpg","fileSize":"758KB","filePath":"//192.168.1.50/common$/SAINADH/UTX/supported//Jellyfish.jpg","id":"1","type":"image/jpeg"},{"fileName":"Jellyfish.jpg","fileSize":"758KB","filePath":"//192.168.1.50/common$/SAINADH/UTX/supported/Jellyfish.jpg","id":"2","type":"image/jpeg"},{"fileName":"Jellyfish.jpg","fileSize":"758KB","filePath":"/home/yerikgan/TEST/supported/Jellyfish.jpg","id":"3","type":"image/jpeg"}],"status":"success"}

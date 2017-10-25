@@ -1,0 +1,14 @@
+Test Start Time: Thu Oct 12 10:12:14 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+stream01                       PASS       0    
+
+-----------------------------------------------
+Total Tests: 1
+Total Skipped Tests: 0
+Total Failures: 0
+Kernel Version: 4.4.0-83-generic
+Machine Architecture: x86_64
+Hostname: vta078l
+

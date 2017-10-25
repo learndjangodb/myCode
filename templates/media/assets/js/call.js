@@ -34,7 +34,7 @@ $(document).ready(function(e){
 			}
 			},
 			error:function(response){
-				alert("error");
+				alert("Error");
 			},
 		});
 		evnt.preventDefault();
@@ -49,7 +49,7 @@ $(document).ready(function(e){
 				window.location.href="/";
 			},
 			error:function(response){
-				alert("error");
+				alert("Error");
 			},
 		});
 		evnt.preventDefault();
@@ -71,7 +71,7 @@ $(document).ready(function(e){
 			type:'POST',
 			data:dic,
 			success:function(response){
-				alert(response);
+				//alert(response);
 				window.location.href="/";
 			},
 			error:function(response){
@@ -86,10 +86,10 @@ $(document).ready(function(e){
 	});
 
 	$('body').delegate("#modify_repo",'click',function(evnt){
-
+			
 		
 		var rep_id = $('.radio').find('input[type="radio"]:checked').val();
-		alert(repo_id);
+		
 		if (rep_id){
 			//alert(rep_id);
 		var dic={};
@@ -101,7 +101,7 @@ $(document).ready(function(e){
 			type:'POST',
 			data:dic,
 			success:function(response){
-				
+				//alert(response);
 				result =JSON.parse(response);
 				if (result.status && result.status==1){
 				$('#mainData').html(result.html_data);
@@ -111,7 +111,7 @@ $(document).ready(function(e){
 			}
 			},
 			error:function(response){
-				alert("error");
+				alert("Error");
 			},
 			
 		});
@@ -142,7 +142,7 @@ $(document).ready(function(e){
 			}
 			},
 			error:function(response){
-				alert("error");
+				alert("Error");
 			},
 		});
 	}
@@ -152,7 +152,7 @@ $(document).ready(function(e){
 
 
 	$('body').delegate("#new_repository",'submit',function(evnt){
-		alert($("#mysource").val());
+		//alert($("#mysource").val());
 			//console.log($("#mysource").val());
 		if($("#repository_name").val() == ''){
 			$("#repository_name_error").html("Enter Repository_name");
@@ -173,7 +173,7 @@ $(document).ready(function(e){
 				processData: false,
     			contentType: false,
 				success:function(response){
-					alert(response);
+					//alert(response);
 					result = JSON.parse(response);
 					if (result.status == 0){
 					$("#myfile_error").html(result.html_data);
@@ -217,7 +217,7 @@ $(document).ready(function(e){
 			}
 			},
 			error:function(response){
-				alert("error");
+				alert("Error");
 			},
 		});
 
@@ -242,7 +242,7 @@ $(document).ready(function(e){
 			}
 			},
 			error:function(response){
-				alert("error");
+				alert("Error");
 			},
 		});
 
@@ -273,7 +273,7 @@ $('body').delegate("#script_execute","click",function(evnt){
     		alert(response);
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -299,7 +299,7 @@ $('body').delegate("#repo_results","click",function(evnt){
     		}
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -324,7 +324,7 @@ $('body').delegate("#repo_reports","click",function(evnt){
     		}
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -343,7 +343,7 @@ $('body').delegate(".repo_analytics","click",function(evnt){
     		$("#mainData").html(response);
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -362,7 +362,7 @@ $('body').delegate(".module_analytics","click",function(evnt){
     		$("#mainData").html(response);
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -376,11 +376,47 @@ $('body').delegate("#repo_monitor_execute","click",function(evnt){
     	url:"/monitorExecution/",
     	type:"POST",
     	data:{},
+
     	success:function(response){
-    		$("#mainData").html(response);
-    	},
+			result =JSON.parse(response);
+			//alert(result);
+			if (result.status==1){
+				$('#mainData').html(result.html_data);
+
+			}
+			else{
+				window.location.href=result.html_data;
+			}
+			},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
+    	},
+    });
+	evnt.preventDefault();
+});
+
+$('body').delegate("#clear_records","click",function(evnt){
+	//alert("hi");
+	//alert("hi")
+    $.ajax({
+    	url:"/clearRecords/",
+    	type:"POST",
+    	data:{},
+    	success:function(response){
+				result =JSON.parse(response);
+				if (result.status==1){
+				$('#mainData').html(result.html_data);
+			
+			}
+			else if (result.status && result.status == 2){
+				alert(result.html_data);
+			}
+		else{
+				window.location.href=result.html_data;
+			}
+			},
+    	error:function(response){
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -401,7 +437,7 @@ $('body').delegate(".script_result","click",function(evnt){
     		$('#myModal').modal('show');
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -422,7 +458,7 @@ $('body').delegate(".view_logs","click",function(evnt){
     		$('#myModal').modal('show');
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -443,7 +479,7 @@ $('body').delegate(".predict_class","click",function(evnt){
     		$('#myModal').modal('show');
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
     });
 	evnt.preventDefault();
@@ -472,7 +508,7 @@ $('body').delegate(".delete_script","click",function(evnt){
     		}
     	},
     	error:function(response){
-    		alert("error");
+    		alert("Error");
     	},
 
 	});

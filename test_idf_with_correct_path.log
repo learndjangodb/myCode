@@ -1,0 +1,5 @@
+ 2:20PM on Oct 10, 2017
+
+Status Code = 200
+
+Content = {"statuscode":"200","recordsData":[{"fileName":"Jellyfish.jpg","size":"758KB","created_date":"2008-02-11 17:02:24","modified_date":"2009-03-12 19:18:23","type":"image/jpeg"},{"fileName":"sample.mp4","size":"1031KB","created_date":"1970-01-01 00:00:00","modified_date":"1970-01-01 00:00:00","type":"application/octet-stream"},{"fileName":"Hydrangeas.jpg","size":"582KB","created_date":"2008-03-24 22:11:53","modified_date":"2009-03-12 19:18:18","type":"image/jpeg"}],"status":"success"}

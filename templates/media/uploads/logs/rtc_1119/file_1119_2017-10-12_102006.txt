@@ -1,0 +1,17 @@
+rtc01       0  TINFO  :  RTC READ TEST:
+rtc01       1  TPASS  :  RTC READ TEST Passed
+rtc01       0  TINFO  :  Current RTC date/time is 12-10-2017, 04:50:06.
+rtc01       0  TINFO  :  RTC ALARM TEST :
+rtc01       0  TINFO  :  Alarm time set to 04:50:11.
+rtc01       0  TINFO  :  Waiting 5 seconds for the alarm...
+rtc01       0  TINFO  :  Alarm rang.
+rtc01       2  TPASS  :  RTC ALARM TEST Passed
+rtc01       0  TINFO  :  RTC UPDATE INTERRUPTS TEST :
+rtc01       0  TINFO  :  Waiting for  5 update interrupts...
+rtc01       0  TINFO  :  Update interrupt 1
+rtc01       0  TINFO  :  Update interrupt 2
+rtc01       0  TINFO  :  Update interrupt 3
+rtc01       0  TINFO  :  Update interrupt 4
+rtc01       0  TINFO  :  Update interrupt 5
+rtc01       3  TPASS  :  RTC UPDATE INTERRUPTS TEST Passed
+rtc01       0  TINFO  :  RTC Tests Done!

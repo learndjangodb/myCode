@@ -9,6 +9,10 @@ from VTAT_TOOL.models import Repository, RepositoryData, Genre, TestLogs
 import json
 from django.core.files.storage import FileSystemStorage
 import sys
+
+
+reload(sys)  
+sys.setdefaultencoding('utf8')
 import subprocess
 from django.shortcuts import render_to_response
 from django.template.loader import render_to_string
@@ -52,6 +56,8 @@ for j in range(2, work_sheet.max_row+1):
 @login_required
 @csrf_exempt
 def index(request):
+    print (BASE_DIR)
+
     user_data = Repository.objects.filter(user=request.user.id)
     # print tests_sheet
 
@@ -209,20 +215,55 @@ def run_repository(request):
                 if file_ide:
                     file_obj = RepositoryData.objects.get(id=file_id)
                     cmd = file_obj.testcase_action
-                    print("cmd", cmd)
-                    print("88888888888888888888888")
+                    
                     if cmd == " ":
                         return {"success_iterations": success_iterations, "fail_iterations": fail_iterations, "status": 1}
+                    parent_names = []
+                    def parent_name(parentID):
+                        parentID = RepositoryData.objects.get(id=parentID)
+                        if parentID.parent:
+                            parent_names.append(parentID.parent.testcase_name)
+                            return parent_name(parentID.parent_id)
+                        else:
+                            return  parent_names
+
+                    parent_names = parent_name(file_obj.id)
+
+
+                    #if file_obj.parent and file_obj.parent.testcase_name == "runtest":
+                    if "runtest" in parent_names:
+                        print ("ipcipcipcipcipicpipcpipcipicpicp")
+                        os.chdir("/opt/ltp")
+                        print (os.getcwd())
+                        cmd = file_obj.testcase_action
+                        print("cmd",cmd)
+                    elif file_obj.parent and file_obj.parent.testcase_name == "testscripts":
+                        os.chdir("/opt/ltp/testscripts")
+                        cmd = file_obj.testcase_action
+                    else:
+                        pass
+                    parent_names = []
+
+                    print("cmd", cmd)
+                    print("88888888888888888888888")
                     process = subprocess.Popen(
                         cmd, stderr=subprocess.PIPE, stdout=subprocess.PIPE, shell=True)
                     out, err = process.communicate()
+
+                    print ("out is",out)
+                    print ("err is",err)
                     print(file_obj.log_name)
                     print("//////////////////////////////////")
+                    
                     with open(str(file_obj.log_name), "r") as fr:
                         lines = fr.readlines()
-                        print("lines", lines)
+                        #print("lines", lines)
                         if lines:
-                            log_fp.writelines(lines)
+                            lines_data = ''.join(lines)
+                            # lines_data = ''
+                            # for line_data in lines:
+                            #     lines_data=lines_data+line_data
+                            log_fp.writelines(str(lines_data))#.encode('utf-8').strip())
                             if re.search(r"error|exception", fr.read(), re.I):
                                 print("re")
                                 fail_iterations += 1
@@ -239,10 +280,13 @@ def run_repository(request):
                         else:
                             fail_iterations += 1
                             return {"success_iterations": success_iterations, "fail_iterations": fail_iterations, "status": 0}
+                        #fr.close()
+                        os.chdir(BASE_DIR)
                 # except Exception as e:
                     #fail_iterations +=1
                     # return
                     # {"success_iterations":success_iterations,"fail_iterations":fail_iterations,"status":-1}
+
             else:
                 fail_iterations += 1
                 return {"success_iterations": success_iterations, "fail_iterations": fail_iterations, "status": -1}
@@ -357,6 +401,7 @@ def run_repository(request):
 
                 else:
                     continue
+            run_flag = 0
 
         return HttpResponse("success")
     else:
@@ -372,8 +417,8 @@ def monitor_execution(request):
 
         show_monitor_list = copy.deepcopy(monitor_list)
         html = render_to_string("monitor_execution.html", {
-                                "monitor_list": show_monitor_list})
-        return HttpResponse(html)
+                                "monitor_list": monitor_list,"repo_name_sheet": repo_name_sheet, "categ_name_sheet": categ_name_sheet, "tests_sheet": tests_sheet})
+        return HttpResponse(json.dumps({"status": 1, "html_data": html}))
     else:
         return HttpResponse(json.dumps({"status": 0, "html_data": "/NotFound/"}))
 #from mptt.forms import TreeNodeChoiceField
@@ -414,12 +459,15 @@ def show_script_logs(request):
                 res_data = file_obj.log_file_name.chunks()
                 data = ''
                 for i in res_data:
+                    print(type(i),i[0])
                     try:
                         data = data+str(i).encode('utf-8')
+
                     except UnicodeDecodeError:
                         data = data+str(i)
 
                 data = data.replace("\n", '<br>')
+                
                 if len(data) == 0:
                     return HttpResponse("No information Provided")
                 else:
@@ -494,6 +542,23 @@ def modify_repository(request):
 		return HttpResponse(json.dumps({"status":0,"html_data":"/NotFound/"}))
 
 
+@csrf_exempt
+def monitor_clear_records(request):
+    if request.method == "POST":
+        global monitor_list
+
+        for ele in monitor_list:
+            if ele["status"] == "Scheduled":
+                return HttpResponse(json.dumps({"status":2,"html_data":"Still the Execution is going,we can't clear records"}))
+        
+        monitor_list = []
+        html = render_to_string("monitor_execution.html", {"monitor_list": monitor_list,"repo_name_sheet": repo_name_sheet, "categ_name_sheet": categ_name_sheet, "tests_sheet": tests_sheet})
+
+        return HttpResponse(json.dumps({"status":1,"html_data":html}))
+    else:
+        return HttpResponse(json.dumps({"status":0,"html_data":"html"}))
+
+
 
 @csrf_exempt
 def DeviceBranchList(request):
@@ -506,3 +571,4 @@ def DeviceBranchList(request):
         i_max = mptt_level_max['mptt_level__max']
         test = transMPTTTable(RepositoryData, branches, i_max)
         return render(request, 'devicebranch_list.html', {'test': test})
+

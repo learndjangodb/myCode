@@ -1,0 +1,11 @@
+Test Start Time: Tue Oct 10 16:26:59 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+Test Start Time: Tue Oct 10 16:30:33 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+/usr/bin/ldd: line 41: printf: write error: Broken pipe
+/usr/bin/ldd: line 43: printf: write error: Broken pipe
+pan(28363): Must supply a file collection or a command

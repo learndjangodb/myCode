@@ -1,9 +1,0 @@
-Script Start at : Mon Aug 21 16:28:30 2017
-
-
-Going to Test  ['get']
-passed wrong command line arguments
-Traceback (most recent call last):
-  File "run.py", line 220, in <module>
-    elif lis[index]=="delete" or lis[index]=="w_delete":        # delete
-Exception: Error: you have passed wrong command line arguments['get']

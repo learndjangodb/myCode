@@ -1,0 +1,14 @@
+Test Start Time: Mon Oct 16 10:08:51 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+msgrcv01                       PASS       0    
+
+-----------------------------------------------
+Total Tests: 1
+Total Skipped Tests: 0
+Total Failures: 0
+Kernel Version: 4.4.0-83-generic
+Machine Architecture: x86_64
+Hostname: vta078l
+

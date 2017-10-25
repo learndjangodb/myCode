@@ -1,6 +1,0 @@
-*********************************************
- 5:07PM on Aug 22, 2017
-
-Status Code = 200
-
-Content = {"statuscode":"202","status":"failed"}

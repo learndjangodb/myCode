@@ -1,0 +1,23 @@
+Test Start Time: Tue Oct 10 17:37:47 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+pipeio_1                       PASS       0    
+pipeio_3                       PASS       0    
+pipeio_4                       PASS       0    
+pipeio_5                       PASS       0    
+pipeio_6                       PASS       0    
+pipeio_8                       PASS       0    
+sem01                          PASS       0    
+sem02                          PASS       0    
+
+-----------------------------------------------
+Total Tests: 8
+Total Skipped Tests: 0
+Total Failures: 0
+Kernel Version: 4.4.0-83-generic
+Machine Architecture: x86_64
+Hostname: vta078l
+
+/usr/bin/ldd: line 41: printf: write error: Broken pipe
+/usr/bin/ldd: line 43: printf: write error: Broken pipe

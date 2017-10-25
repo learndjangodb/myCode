@@ -1,0 +1,28 @@
+Test Start Time: Thu Oct 12 10:13:09 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+wait401                        PASS       0    
+
+-----------------------------------------------
+Total Tests: 1
+Total Skipped Tests: 0
+Total Failures: 0
+Kernel Version: 4.4.0-83-generic
+Machine Architecture: x86_64
+Hostname: vta078l
+
+Test Start Time: Thu Oct 12 10:23:01 2017
+-----------------------------------------
+Testcase                       Result     Exit Value
+--------                       ------     ----------
+wait401                        PASS       0    
+
+-----------------------------------------------
+Total Tests: 1
+Total Skipped Tests: 0
+Total Failures: 0
+Kernel Version: 4.4.0-83-generic
+Machine Architecture: x86_64
+Hostname: vta078l
+
