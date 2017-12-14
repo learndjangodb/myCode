@@ -43,7 +43,8 @@ class RepositoryData(MPTTModel):
         return str(self.testcase_name+"_"+str(self.id))
 
 def get_upload_to_log(instance,filename):
-    return 'uploads/logs/%s/%s' %(instance.log_testcase,filename)
+    #return 'uploads/logs/%s/%s' %(instance.log_testcase,filename)
+    return 'uploads/logs/%s' %(filename)
 
 class TestLogs(models.Model):
     log_testcase = models.ForeignKey(RepositoryData)

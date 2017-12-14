@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'VTAT_TOOL',
     'mptt',
+	'django_extensions',
 ]
 
 MIDDLEWARE_CLASSES = [
