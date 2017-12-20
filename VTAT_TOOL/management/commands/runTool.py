@@ -113,7 +113,7 @@ class Command(BaseCommand):
 
 
 
-        repo=git.Repo("/home/naluvjyo/Documents/git_train/project")
+        repo=git.Repo("/var/lib/jenkins/workspace/Kibana/")
         hcommit = repo.head.commit
         print(hcommit)
         print(hcommit.diff('HEAD~1'))

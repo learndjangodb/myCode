@@ -26,7 +26,7 @@ SECRET_KEY = 'gy+s*cbvo+ea7hm2n$9e)+*cw_6q44krz4)vs6mu*wz-%^fuck'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["192.168.4.124", "127.0.0.1"]
+ALLOWED_HOSTS = ["192.168.4.103", "127.0.0.1"]
 ADMIN_SITE_HEADER = "VTAT Administration"
 
 # Application definition
