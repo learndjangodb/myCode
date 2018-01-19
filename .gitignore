@@ -2,4 +2,6 @@
 *.pyc
 *.txt
 __pycache__/
-
+__init__/
+**/migrations/*
+**/__pycache__/*
