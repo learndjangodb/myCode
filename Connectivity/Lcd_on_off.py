@@ -22,27 +22,38 @@ def dev_id_and_ip():
 				adb_dev.append(j)
 
 	#print adb_dev,"\n"
-def Wifi_On_Off():
+
+def LCD_On_Off():
 	global adb_dev
 	#Number of Iteration
-	Iterations=100
+	Iterations=5
 	for i in range(Iterations):
-		for wifi_dev in adb_dev:
-			enab="adb -s "+wifi_dev+" shell "+"svc wifi enable"
+		for lcd_dev in adb_dev:
+			enab="adb -s "+lcd_dev+" shell input keyevent 26"
 			exe=os.system(enab)
 			if exe==0:
-				print "\nWifi turn on successfully in ",wifi_dev," device"
+				print "\nLCD turn on successfully in ",lcd_dev," device"
 			else:
 				pass
 			time.sleep(3)
-		for wifi_dev in adb_dev:
-			disb="adb -s "+wifi_dev+" shell "+"svc wifi disable"
+		for lcd_dev in adb_dev:
+			disb="adb -s "+lcd_dev+" shell input keyevent 26"
 			exe=os.system(disb)
 			if exe==0:
-				print "\nWifi turn off successfully in ",wifi_dev," device"
+				print "\nLCD turn off successfully in ",lcd_dev," device"
 			else:
 				pass
 			time.sleep(3)
 
 dev_id_and_ip()
-Wifi_On_Off()
+LCD_On_Off()
+
+
+'''
+#Commands:
+adb shell input keyevent KEYCODE_POWER
+
+or
+
+adb shell input keyevent 26
+'''

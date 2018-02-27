@@ -244,10 +244,14 @@ def run_repository(request):
                     else:
                         pass
                     test_parent_name = parent_names[0]
+                    pro_dir = parent_names[-1]
                     parent_names = []
 
 
                     print("cmd", cmd)
+                    cur_dir = os.getcwd()
+                    os.chdir(cur_dir+'/'+pro_dir)
+                    print(os.getcwd())
                     print("88888888888888888888888")
                     if os.path.isfile(file_obj.log_name):
                         os.remove(file_obj.log_name)
@@ -263,7 +267,7 @@ def run_repository(request):
                     with open(str(file_obj.log_name), "a") as fr:
                         fr.write('\nTest Name: {}'.format(test_parent_name))
                         fr.write('\nSubTest Name: {}\n'.format(file_obj.testcase_name))
-                        fr.close()
+                        # fr.close()
                         
                     with open(str(file_obj.log_name), "r") as fr:
                         lines = fr.readlines()

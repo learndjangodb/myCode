@@ -28,4 +28,23 @@
 		<children name="SAP_TCP_Qos_DL" action="python S_TCP_Qos_DL.py"></children>
 		<children name="SAP_TCP_Qos_BIDI" action="python S_TCP_Qos_BIDI.py"></children>
 	</root>
+	<root name="P2P">
+		<children name="P2P_UDP_UL" action="python P2P_UDP_UL.py"></children>
+		<children name="P2P_UDP_DL" action="python P2P_UDP_DL.py"></children>
+		<children name="P2P_UDP_BIDI" action="python P2P_UDP_BIDI.py"></children>
+		<children name="P2P_UDP_Qos_UL" action="python P2P_UDP_Qos_UL.py"></children>
+		<children name="P2P_UDP_Qos_DL" action="python P2P_UDP_Qos_DL.py"></children>
+		<children name="P2P_UDP_Qos_BIDI" action="python P2P_UDP_Qos_BIDI.py"></children>
+		<children name="P2P_TCP_UL" action="python P2P_TCP_UL.py"></children>
+		<children name="P2P_TCP_DL" action="python P2P_TCP_DL.py"></children>
+		<children name="P2P_TCP_BIDI" action="python P2P_TCP_BIDI.py"></children>
+	</root>
+	<root name="Interruptions">
+		<children name="Apn_on_off" action="python Apn_on_off.py"></children>
+		<children name="BT_on_off" action="python BT_on_off.py"></children>
+		<children name="Lcd_on_off" action="python Lcd_on_off.py"></children>
+		<children name="N_SAP_on_off" action="python N_SAP_on_off.py"></children>
+		<children name="Wifi_on_off" action="python Wifi_on_off.py"></children>
+		<children name="wifi_scanning" action="python wifi_scanning.py"></children>
+	</root>
 </root>
