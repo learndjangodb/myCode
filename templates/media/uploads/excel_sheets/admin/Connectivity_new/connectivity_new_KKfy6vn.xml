@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<root name="Connectivity">
-	<root name="WIFI">
+	<root name="Connectivity">
 		<root name="Router">
 			<children name="Router_UDP_UL" action="python R_UDP_UL.py"></children>
 			<children name="Router_UDP_DL" action="python R_UDP_DL.py"></children>
@@ -48,7 +47,7 @@
 			<children name="Wifi_on_off" action="python Wifi_on_off.py"></children>
 			<children name="wifi_scanning" action="python wifi_scanning.py"></children>
 		</root>
-	</root>	
+	</root>		
 	<root name="BLUETOOTH">
 		<children name="BT_Adapter_ON_OFF" action="python BT_Adapter_ON_OFF.py"></children>
 		<children name="BT_on_off" action="python BT_on_off.py"></children>
@@ -62,4 +61,5 @@
 		<children name="BT_pair" action="python pair.py"></children>
 		
 	</root>
-</root>	
+	
+</root>
