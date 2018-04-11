@@ -1,3 +1,18 @@
 
 Test Name: Interruptions
 SubTest Name: Apn_on_off
+
+Test Name: Router
+SubTest Name: Router_UDP_DL
+
+Test Name: Router
+SubTest Name: Router_UDP_DL
+
+Test Name: Router
+SubTest Name: Router_UDP_DL
+
+Test Name: voice
+SubTest Name: Modem_call
+
+Test Name: voice
+SubTest Name: Modem_message

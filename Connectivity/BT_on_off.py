@@ -29,7 +29,7 @@ def dev_id_and_ip():
 def BT_On_Off():
 	global adb_dev
 	#Number of Iteration
-	Iterations=100
+	Iterations=10
 	for i in range(Iterations):
 		for bt_dev in adb_dev:
 			enab="adb -s "+bt_dev+" shell service call bluetooth_manager 6 for BT-enabling"	

@@ -250,7 +250,8 @@ def run_repository(request):
 
                     print("cmd", cmd)
                     cur_dir = os.getcwd()
-                    os.chdir(cur_dir+'/'+pro_dir)
+                    if 'ltp' != pro_dir.lower():
+                        os.chdir(cur_dir+'/'+pro_dir)
                     print(os.getcwd())
                     print("88888888888888888888888")
                     if os.path.isfile(file_obj.log_name):
@@ -263,10 +264,12 @@ def run_repository(request):
                     print ("err is",err)
                     print(file_obj.log_name)
                     print("//////////////////////////////////")
-                    
+                    os.chdir(cur_dir)
                     with open(str(file_obj.log_name), "a") as fr:
                         fr.write('\nTest Name: {}'.format(test_parent_name))
                         fr.write('\nSubTest Name: {}\n'.format(file_obj.testcase_name))
+                        # if pro_dir == "Connectivity":
+                        #     fr.write(subprocess.check_output("adb shell logcat -v time", shell=True))
                         # fr.close()
                         
                     with open(str(file_obj.log_name), "r") as fr:

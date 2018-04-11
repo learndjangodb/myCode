@@ -28,7 +28,7 @@ def dev_id_and_ip():
 def APN_On_Off():
 	global adb_dev
 	#Number of Iteration
-	Iterations=100
+	Iterations=10
 	for i in range(Iterations):
 		for Apn_dev in adb_dev:
 			enab1="adb -s "+Apn_dev+" shell settings put global airplane_mode_on 1"
